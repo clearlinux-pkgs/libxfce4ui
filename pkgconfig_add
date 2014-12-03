@@ -1,0 +1,11 @@
+#
+# This file contains extra pkgconfig build requirements that don't get picked up but are 
+# desirable. One name per line, no whitespace.
+#
+glib-2.0
+libxfce4util-1.0
+gtk+-2.0
+libxfconf-0
+ice
+sm
+egl
