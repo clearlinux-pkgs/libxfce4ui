@@ -4,7 +4,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.12.1
-Release  : 9
+Release  : 10
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
