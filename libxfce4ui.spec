@@ -4,7 +4,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.12.1
-Release  : 10
+Release  : 11
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
@@ -59,6 +59,7 @@ Group: Development
 Requires: libxfce4ui-lib
 Requires: libxfce4ui-bin
 Requires: libxfce4ui-data
+Provides: libxfce4ui-devel
 
 %description dev
 dev components for the libxfce4ui package.
@@ -94,7 +95,7 @@ locales components for the libxfce4ui package.
 %patch1 -p1
 
 %build
-%configure --disable-static
+%configure --disable-static --with-vendor-info="Clear Linux Project for Intel Architecture"
 make V=1  %{?_smp_mflags}
 
 %check
@@ -108,7 +109,7 @@ rm -rf %{buildroot}
 %make_install
 %find_lang libxfce4ui
 ## make_install_append content
-mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir}
+mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir} && install -d -D -m 00755 %{buildroot}%{_datadir}/xfce4 && echo "Clear Linux Project for Intel Architecture" > %{buildroot}%{_datadir}/xfce4/vendorinfo
 ## make_install_append end
 
 %files
@@ -123,6 +124,7 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 /usr/share/applications/xfce4-about.desktop
 /usr/share/icons/hicolor/48x48/apps/xfce4-logo.png
 /usr/share/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
+/usr/share/xfce4/vendorinfo
 
 %files dev
 %defattr(-,root,root,-)
