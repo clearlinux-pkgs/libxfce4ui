@@ -1,2 +1,1 @@
-mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir}
-
+mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir} && install -d -D -m 00755 %{buildroot}%{_datadir}/xfce4 && echo "Clear Linux Project for Intel Architecture" > %{buildroot}%{_datadir}/xfce4/vendorinfo
