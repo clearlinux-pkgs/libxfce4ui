@@ -4,7 +4,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.12.1
-Release  : 11
+Release  : 12
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
@@ -23,12 +23,13 @@ BuildRequires : libxslt-bin
 BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(egl)
 BuildRequires : pkgconfig(glib-2.0)
+BuildRequires : pkgconfig(gobject-2.0)
 BuildRequires : pkgconfig(gtk+-2.0)
 BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libxfce4util-1.0)
 BuildRequires : pkgconfig(libxfconf-0)
 BuildRequires : pkgconfig(sm)
-Patch1: ctrl-alt-t.patch
+Patch1: 0001-Set-default-keyboard-shortcuts-for-use-within-Clear-.patch
 
 %description
 What is it?
