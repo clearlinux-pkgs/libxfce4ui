@@ -1,0 +1,27 @@
+From e42f5c8955ea7b964cff05a8bffe690f89dcbbf9 Mon Sep 17 00:00:00 2001
+From: Ikey Doherty <michael.i.doherty@intel.com>
+Date: Tue, 15 Mar 2016 16:46:42 +0000
+Subject: [PATCH] Set default keyboard shortcuts for use within Clear Linux
+ os-utils-gui
+
+Signed-off-by: Ikey Doherty <michael.i.doherty@intel.com>
+---
+ libxfce4kbd-private/xfce4-keyboard-shortcuts.xml | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml b/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
+index 35a6625..4a7f531 100644
+--- a/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
++++ b/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
+@@ -17,6 +17,8 @@
+       <property name="&lt;Primary&gt;Escape" type="string" value="xfdesktop --menu"/>
+       <property name="XF86WWW" type="string" value="exo-open --launch WebBrowser"/>
+       <property name="XF86Mail" type="string" value="exo-open --launch MailReader"/>
++      <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="xfce4-terminal"/>
++      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
+     </property>
+   </property>
+   <property name="xfwm4" type="empty">
+-- 
+2.7.1
+
