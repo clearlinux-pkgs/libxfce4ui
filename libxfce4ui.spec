@@ -4,7 +4,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.12.1
-Release  : 14
+Release  : 15
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
@@ -96,10 +96,16 @@ locales components for the libxfce4ui package.
 %patch1 -p1
 
 %build
+export LANG=C
+export CFLAGS="$CFLAGS -Os -ffunction-sections "
+export FCFLAGS="$CFLAGS -Os -ffunction-sections "
+export FFLAGS="$CFLAGS -Os -ffunction-sections "
+export CXXFLAGS="$CXXFLAGS -Os -ffunction-sections "
 %configure --disable-static --with-vendor-info="Clear Linux Project for Intel Architecture"
 make V=1  %{?_smp_mflags}
 
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
