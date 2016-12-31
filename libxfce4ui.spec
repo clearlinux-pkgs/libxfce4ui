@@ -4,7 +4,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.12.1
-Release  : 15
+Release  : 16
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.12/libxfce4ui-4.12.1.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
@@ -18,6 +18,7 @@ Requires: libxfce4ui-locales
 BuildRequires : docbook-xml
 BuildRequires : gtk-doc
 BuildRequires : gtk-doc-dev
+BuildRequires : gtk3-dev
 BuildRequires : intltool
 BuildRequires : libxslt-bin
 BuildRequires : perl(XML::Parser)
@@ -29,6 +30,7 @@ BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libxfce4util-1.0)
 BuildRequires : pkgconfig(libxfconf-0)
 BuildRequires : pkgconfig(sm)
+BuildRequires : startup-notification-dev
 Patch1: 0001-Set-default-keyboard-shortcuts-for-use-within-Clear-.patch
 
 %description
@@ -97,6 +99,7 @@ locales components for the libxfce4ui package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1483203496
 export CFLAGS="$CFLAGS -Os -ffunction-sections "
 export FCFLAGS="$CFLAGS -Os -ffunction-sections "
 export FFLAGS="$CFLAGS -Os -ffunction-sections "
@@ -140,6 +143,11 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 /usr/include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts-provider.h
 /usr/include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts-xfwm4.h
 /usr/include/xfce4/libxfce4kbd-private-2/libxfce4kbd-private/xfce-shortcuts.h
+/usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcut-dialog.h
+/usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-grabber.h
+/usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-provider.h
+/usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-xfwm4.h
+/usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts.h
 /usr/include/xfce4/libxfce4ui-1/libxfce4ui/libxfce4ui-config.h
 /usr/include/xfce4/libxfce4ui-1/libxfce4ui/libxfce4ui-enum-types.h
 /usr/include/xfce4/libxfce4ui-1/libxfce4ui/libxfce4ui.h
@@ -149,8 +157,23 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 /usr/include/xfce4/libxfce4ui-1/libxfce4ui/xfce-sm-client.h
 /usr/include/xfce4/libxfce4ui-1/libxfce4ui/xfce-spawn.h
 /usr/include/xfce4/libxfce4ui-1/libxfce4ui/xfce-titled-dialog.h
-/usr/lib64/*.so
-/usr/lib64/pkgconfig/*.pc
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-config.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-enum-types.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/xfce-dialogs.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gdk-extensions.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gtk-extensions.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/xfce-sm-client.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/xfce-spawn.h
+/usr/include/xfce4/libxfce4ui-2/libxfce4ui/xfce-titled-dialog.h
+/usr/lib64/libxfce4kbd-private-2.so
+/usr/lib64/libxfce4kbd-private-3.so
+/usr/lib64/libxfce4ui-1.so
+/usr/lib64/libxfce4ui-2.so
+/usr/lib64/pkgconfig/libxfce4kbd-private-2.pc
+/usr/lib64/pkgconfig/libxfce4kbd-private-3.pc
+/usr/lib64/pkgconfig/libxfce4ui-1.pc
+/usr/lib64/pkgconfig/libxfce4ui-2.pc
 
 %files doc
 %defattr(-,root,root,-)
@@ -181,8 +204,15 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/*.so.*
+/usr/lib64/libxfce4kbd-private-2.so.0
+/usr/lib64/libxfce4kbd-private-2.so.0.0.0
+/usr/lib64/libxfce4kbd-private-3.so.0
+/usr/lib64/libxfce4kbd-private-3.so.0.0.0
+/usr/lib64/libxfce4ui-1.so.0
+/usr/lib64/libxfce4ui-1.so.0.0.0
+/usr/lib64/libxfce4ui-2.so.0
+/usr/lib64/libxfce4ui-2.so.0.0.0
 
-%files locales -f libxfce4ui.lang 
+%files locales -f libxfce4ui.lang
 %defattr(-,root,root,-)
 
