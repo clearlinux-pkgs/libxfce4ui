@@ -65,6 +65,7 @@ libxfce4ui-1.so.0:xfce_gdk_screen_get_active
 libxfce4ui-1.so.0:xfce_gtk_button_new_mixed
 libxfce4ui-1.so.0:xfce_gtk_frame_box_new
 libxfce4ui-1.so.0:xfce_gtk_frame_box_new_with_content
+libxfce4ui-1.so.0:xfce_gtk_menu_popup_until_mapped
 libxfce4ui-1.so.0:xfce_gtk_window_center_on_active_screen
 libxfce4ui-1.so.0:xfce_message_dialog
 libxfce4ui-1.so.0:xfce_message_dialog_new
@@ -101,7 +102,9 @@ libxfce4ui-1.so.0:xfce_titled_dialog_get_subtitle
 libxfce4ui-1.so.0:xfce_titled_dialog_get_type
 libxfce4ui-1.so.0:xfce_titled_dialog_new
 libxfce4ui-1.so.0:xfce_titled_dialog_new_with_buttons
+libxfce4ui-1.so.0:xfce_titled_dialog_new_with_mixed_buttons
 libxfce4ui-1.so.0:xfce_titled_dialog_set_subtitle
+libxfce4ui-1.so.0:xfce_widget_reparent
 libxfce4ui-2.so.0:libxfce4ui_check_version
 libxfce4ui-2.so.0:xfce_dialog_confirm
 libxfce4ui-2.so.0:xfce_dialog_show_error
@@ -113,6 +116,7 @@ libxfce4ui-2.so.0:xfce_gdk_screen_get_active
 libxfce4ui-2.so.0:xfce_gtk_button_new_mixed
 libxfce4ui-2.so.0:xfce_gtk_frame_box_new
 libxfce4ui-2.so.0:xfce_gtk_frame_box_new_with_content
+libxfce4ui-2.so.0:xfce_gtk_menu_popup_until_mapped
 libxfce4ui-2.so.0:xfce_gtk_window_center_on_active_screen
 libxfce4ui-2.so.0:xfce_message_dialog
 libxfce4ui-2.so.0:xfce_message_dialog_new
@@ -149,4 +153,6 @@ libxfce4ui-2.so.0:xfce_titled_dialog_get_subtitle
 libxfce4ui-2.so.0:xfce_titled_dialog_get_type
 libxfce4ui-2.so.0:xfce_titled_dialog_new
 libxfce4ui-2.so.0:xfce_titled_dialog_new_with_buttons
+libxfce4ui-2.so.0:xfce_titled_dialog_new_with_mixed_buttons
 libxfce4ui-2.so.0:xfce_titled_dialog_set_subtitle
+libxfce4ui-2.so.0:xfce_widget_reparent
