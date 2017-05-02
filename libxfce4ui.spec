@@ -4,7 +4,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.13.1
-Release  : 17
+Release  : 18
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.13/libxfce4ui-4.13.1.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.13/libxfce4ui-4.13.1.tar.bz2
 Summary  : Widgets library for Xfce
