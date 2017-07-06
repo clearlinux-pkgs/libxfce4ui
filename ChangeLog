@@ -1,3 +1,783 @@
+commit 408df96e51b1c037a3b7433c355277b6667dda7a
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sun Jul 2 15:40:21 2017 +0300
+
+    Fix make distcheck with gladeui2 install path
+    
+    Switch to using the datarootdir so we honor $prefix.
+
+commit 119e6b6e953034e5b088b569bd5222cfeb18cd46
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sun Jul 2 15:12:39 2017 +0300
+
+    Add an --enable-tests option
+    
+    and default it to off since only developers will be interested in
+    the tests.
+
+commit 6eb73dcfccaa3074a78844bec87012e489295c3e
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sun Jul 2 14:56:24 2017 +0300
+
+    Remove the filterout from introspection sources
+    
+    It's causes a non-POSIX variable name warning.
+
+commit 7b6db8ece43985981d178717849cdd814eda8a48
+Author: Igor <f2404@yandex.ru>
+Date:   Sun Jul 2 06:30:22 2017 +0200
+
+    I18n: Update translation ru (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 1092f3df36f1990790572b5b2a1263c1f7ac8eb2
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Thu Jun 29 06:18:38 2017 +0300
+
+    Move gresource building out of maintainer mode
+
+commit 7911235e3e3934b93aeddd57908a90f6c8811484
+Author: Anonymous <noreply@xfce.org>
+Date:   Sun Jul 2 00:30:14 2017 +0200
+
+    I18n: Update translation da (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit ccb1ee69ff7447835018b28d07470eeefa10157c
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jul 1 18:30:21 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 3ec0d3fd6ee4c6e49b60a4601dca78bc2c3601d8
+Author: Edin Veskovic <edin.veskovic@openmailbox.org>
+Date:   Sat Jul 1 00:30:22 2017 +0200
+
+    I18n: Update translation hr (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit a86b96fc8bf7d8a71fd993b0a5ea30b37603d1dc
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Sat Jul 1 00:30:22 2017 +0200
+
+    I18n: Update translation ca (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 515d11825645538b98e38444bc3c7adc2ba0d4d8
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Jun 30 18:30:15 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 1954e756e7688e1d3f07ce3a618ab1b1fd7d269a
+Author: Yannick Le Guen <leguen.yannick@gmail.com>
+Date:   Fri Jun 30 18:30:15 2017 +0200
+
+    I18n: Update translation fr (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit a625d7d7cf460cc0a195a109bebad875c4b9a603
+Author: Michal Várady <miko.vaji@gmail.com>
+Date:   Fri Jun 30 18:30:15 2017 +0200
+
+    I18n: Update translation cs (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 9ef6e2a6f0f6cfbb2167b8f3ffcd5612b10a3ccb
+Author: Kiril Kirilov <cybercop_montana@abv.bg>
+Date:   Fri Jun 30 18:30:15 2017 +0200
+
+    I18n: Update translation bg (100%).
+    
+    175 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit e3c255de0b38be5eb92cfaf3ef7243b2c4817dc6
+Author: Viktor Odintsev <zakhams@gmail.com>
+Date:   Thu Jun 29 12:37:51 2017 +0300
+
+    Fix condition in confirm dialog
+    
+    This patch also adds default "Yes" label for yes/no dialogs
+    when "gtk-yes" stock_id passed.
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 455430b77ee15560b26a676921cdbaff21ad3fd5
+Author: Landry Breuil <landry@xfce.org>
+Date:   Thu Jun 29 09:45:48 2017 +0200
+
+    Add POTFILES.skip to appease gmake distcheck gods on OpenBSD
+
+commit 6ec04f0b4edad11c1da8db46ce4a9f16d783a83a
+Author: Landry Breuil <landry@xfce.org>
+Date:   Thu Jun 29 09:40:22 2017 +0200
+
+    ship libxfce4ui.gresource.xml in the tarball too
+
+commit 92bf82672555f3c4f956f29e1fbabe259b59f14f
+Author: Landry Breuil <landry@xfce.org>
+Date:   Thu Jun 29 09:14:50 2017 +0200
+
+    Add libxfce4ui-marshal.list to EXTRA_DIST to fix --enable-maintainer-mode on released tarballs
+
+commit 3bfe8de4b498949e44e47c96dae045235c410205
+Author: Olivier Duchateau <duchateau.olivier@gmail.com>
+Date:   Mon Jun 26 20:23:16 2017 +0200
+
+    Fix build error with --disable-gtk2
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 4eb76187b09d4b4221c466fe5369b9c4dde95207
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Mon Jun 26 16:46:18 2017 +0300
+
+    Back to development
+
+commit 6193e0ba8333b2d51c0a9db1b6ee44ada4756c06
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Mon Jun 26 16:43:17 2017 +0300
+
+    Updates for release
+
+commit e27efecb8c86038e8c4d3e44f64c1880b8053de3
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 24 15:00:26 2017 +0300
+
+    Rename introspection GIR to 4ui-2.0 to match util
+    
+    Add introspection annotations and add a hello world python
+    example.
+
+commit c694a84ecb24c8d16f78bdc37561992001286822
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 24 13:16:44 2017 +0300
+
+    feat: Switch to Gtk3 default, Gtk2 Optional
+    
+    And with that change, make the xfce-about dialog Gtk3.
+
+commit 668644fed9d218f72d1764a19ca61bf6e45dec38
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 24 12:43:18 2017 +0300
+
+    fix: remove deprecation warnings
+    
+    And update the Gtk3 requirement to 3.18.
+
+commit 4b5a29c11467d6d8cf6a226c30faa541909ea3a1
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 24 11:57:27 2017 +0300
+
+    fix: make distcheck
+
+commit bd0c2ddacb33988d0a3b99b30e9748282a6422c6
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Fri Jun 23 04:34:11 2017 +0300
+
+    Add missing introspection.m4 file
+
+commit 9e33569c1eaaf685641ef40f4030864457264c5e
+Author: Anonymous <noreply@xfce.org>
+Date:   Wed Jun 21 06:30:22 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a4e128c8948625f272fb9a0700ad0ac8d355b33b
+Author: Theppitak Karoonboonyanan <theppitak@gmail.com>
+Date:   Sun Jun 18 12:30:24 2017 +0200
+
+    I18n: Update translation th (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 63dceead0dfbf89929dca5227b4cc3329c898b4f
+Author: Anonymous <noreply@xfce.org>
+Date:   Sun Jun 18 06:30:25 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 11d2324e82c8a8d9da07bb7425879fd47f4bc2d6
+Author: Piotr Sokół <psokol.l10n@gmail.com>
+Date:   Sun Jun 11 12:30:16 2017 +0200
+
+    I18n: Update translation pl (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a9c88f86e9f8384fb441758c853792a66e5fead1
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 10 15:44:37 2017 +0300
+
+    Add GtkDoc checks
+    
+    We add a documentation check during make check or distcheck to
+    ensure new functions/objects added are properly added prior to
+    release. This patch also cleans up all the current warnings.
+
+commit 6ff48eb5d2ee27f7dd33ecc28738220f0a2c7fa6
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 10 14:32:31 2017 +0300
+
+    Add support for GOBJECT-INTROSPECTION (Bug #13461)
+    
+    GOjbect Introspection allows various other languages to automatically
+    generate bindings they can use. For details see:
+    https://wiki.gnome.org/action/show/Projects/GObjectIntrospection
+    
+    To support this, we need to add a gobject and introspection
+    dependency. The introspection one is optional and it is what
+    determines if the libxfce4ui-2 gir is created.
+    Only libxfce4ui-2 is created (the Gtk3 version) as it makes little
+    sense to support new applications in Gtk2.
+
+commit 89fa6ec8756e3bb1af923d457fe50511a6c14fa0
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Sat Jun 10 13:45:29 2017 +0300
+
+    Let autotools find and invoke glib-compile-resources (Bug #13326)
+
+commit 1feefa99ee50ff0cab474d52d4d00407e4e95362
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Tue May 16 10:04:27 2017 +0300
+
+    fix: add libxfce4ui_get_resource to abi check symbols (Bug #13326)
+    
+    libxfce4ui_get_resource is only used internally but the abi check
+    still needs it to be added. Instead of complicating that symbol
+    file more, we'll just build the libxfce4ui-dialog-ui.ui resource
+    for both Gtk2 and Gtk3 even though we only need it for Gtk3.
+
+commit 1a2edb377bc90f2abbf79f5a64b5e9fddd90e72e
+Author: Eric Koegel <eric.koegel@gmail.com>
+Date:   Thu May 11 14:01:59 2017 +0300
+
+    Remove exo dependancy (Bug #13326)
+    
+    exo-csource was accidently added in the Gtk3 port. Switch to
+    compiling it as a GResource and loading that via GtkBuilder.
+
+commit 898453de1fbc349bf90f2692203858eabb34a4d6
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Tue May 9 10:33:41 2017 +0200
+
+    Default debug to yes instead of full
+    
+            - Otherwise we'll always have minor builds failing because of random gtk deprecations.
+            - Also revert --disable-debug (bad commit)
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 5590024a65b0df853107004e9bded9209d070aef
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 22:52:56 2017 +0200
+
+    Change xfce_dialog_show_help(_with_version)
+    
+            - Rename application to component in .h, to be coherent with .c
+            - Same for xfce_dialog_show_help_with_version
+            - Coherent documentation now
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 1fa6f11717e5767079aa421e2ee9c7c4a8c8ce15
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 22:48:06 2017 +0200
+
+    Better documentation processing
+    
+            - No more sgml things.
+            - You only need to add new functions to docs/libxfce4ui-sections.txt to add them to the doc.
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 89224eb8848d2e45f091d54bc47ead2f00877fbe
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 16:28:25 2017 +0200
+
+    What year are we in?
+    
+            - 2017 !
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit fc5222ec3b08da50e2e114fe041ddf78a7f26537
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 16:10:50 2017 +0200
+
+    Remove Makefile.am space to fix autogen.sh warning
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 6a622d360fed36715841acf4d8afd6103b928312
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 15:46:43 2017 +0200
+
+    Fix xfce_dialog_show_help(_with_version) doc
+    
+            - Add xfce_dialog_show_help and xfce_dialog_show_help_with_version to gtk-doc
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 857a65d494dd4c5007e7b7c02b132143b5c6c68b
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 14:55:06 2017 +0200
+
+    Fix make docs compilation warning
+    
+            - Replace @Varargs by @...
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit b2625a2caf2dd43841c2ff3325025e312ff68401
+Author: Romain B <skunnyk@alteroot.org>
+Date:   Mon May 8 14:04:06 2017 +0200
+
+    Update libxfce4ui documentation
+    
+            - Adding forgotten functions to doc : xfce_gtk_menu_popup_until_mapped, xfce_widget_reparent, xfce_titled_dialog_new_with_mixed_buttons
+    
+    Signed-off-by: Eric Koegel <eric.koegel@gmail.com>
+
+commit 4ca86894cc3357cafbf3a704c2d17c3b958ce0c9
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Sun Apr 30 12:30:19 2017 +0200
+
+    I18n: Update translation sr (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 845a1530b4c9454435f32f2ef5463109eef39e39
+Author: Aljoša Žagar <anthon.manix@gmail.com>
+Date:   Fri Apr 21 18:30:28 2017 +0200
+
+    I18n: Update translation sl (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 290f13d50f67274c784c8ef7cca053cdb743cb79
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Apr 13 18:30:24 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ccb432cf3e0717e1c4e4293e6116b0a519321cd6
+Author: Xosé <xosecalvo@gmail.com>
+Date:   Tue Mar 21 00:30:30 2017 +0100
+
+    I18n: Update translation gl (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 366ee372ddd2e32eca6e5e617fce0d7b6b53f540
+Author: Kevin Brubeck Unhammer <unhammer+dill@mm.st>
+Date:   Thu Mar 9 12:30:22 2017 +0100
+
+    I18n: Update translation nn (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 25e7399389a26025788880a0fd2213865cf7d7da
+Author: Cheng-Chia Tseng <pswo10680@gmail.com>
+Date:   Wed Mar 8 18:30:24 2017 +0100
+
+    I18n: Update translation zh_TW (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5ee0ea43415d8ad7192a4245a1e18d51d935da1c
+Author: Apóstolos Papaðimitríu <apostolos.papadimitriu@gmail.com>
+Date:   Sat Mar 4 00:30:23 2017 +0100
+
+    I18n: Update translation el (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2746a2a93488e778d60254c4d71ae78697a1e879
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:   Sun Feb 26 06:30:30 2017 +0100
+
+    I18n: Update translation id (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ac11195abc8579a0b79d11c1651f90a8467b9ed0
+Author: Xiaobo Zhou <zhouxiaobo.500@gmail.com>
+Date:   Tue Feb 14 12:30:13 2017 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c734d638eb9fec6bb0a14cc7d7e3c56382a7bc6e
+Author: William Thomas <littlecloudydev@gmail.com>
+Date:   Tue Feb 14 12:30:13 2017 +0100
+
+    I18n: Update translation id (97%).
+    
+    170 translated messages, 4 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a5ed08c729e02d51af6c3093c15a872151a430f5
+Author: Xiaobo Zhou <zhouxiaobo.500@gmail.com>
+Date:   Mon Feb 13 18:30:14 2017 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit bbabecb6afec0ad3ba9105050191c40c66dbda7e
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Fri Feb 10 12:30:13 2017 +0100
+
+    I18n: Update translation ca (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5d999104250a3001159a0e0125603747cc084363
+Author: Pasi Lallinaho <pasi@shimmerproject.org>
+Date:   Thu Feb 2 18:30:25 2017 +0100
+
+    I18n: Update translation fi (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 577f3df3db0095539966f6ed1d44fc7fd3af9edc
+Author: samson <sambelet@yahoo.com>
+Date:   Mon Jan 23 18:30:13 2017 +0100
+
+    I18n: Update translation am (57%).
+    
+    100 translated messages, 74 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5de8a06f0bbdfbe0a7e11f58b19c2689a14a029b
+Author: Seong-ho Cho <darkcircle.0426@gmail.com>
+Date:   Mon Jan 23 06:30:13 2017 +0100
+
+    I18n: Update translation ko (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit bc5d14e477a35073b909205b221669bb0427715b
+Author: Anonymous <noreply@xfce.org>
+Date:   Sun Jan 22 00:30:26 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit d68b65abac2fa4ccaa21da8211d5b55d5c9a5d1f
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 21 18:30:33 2017 +0100
+
+    I18n: Update translation ro (95%).
+    
+    167 translated messages, 7 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 87831c138e2a0b867c150ca2eae36f5475827440
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 21 18:30:31 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5e5e012832a7eeee64f5c43f56f3069cab3e15a9
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 21 00:30:13 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4a651714cde2d9332a56d2173d99a5fa52d44d6f
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Jan 20 18:30:13 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 85925aa150adca7aae2302b7488dfec3e8271910
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Jan 19 12:30:17 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 069bbf2f2110aea6d48c8ab1c2303239d2d87b1b
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Jan 17 18:30:25 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 194f41a0963beb9f0eb1c71882956499e5eedf5a
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Jan 17 12:30:25 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a0ee3b344a493e90a5c37eb4e008e4bcc5d267c4
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Jan 16 18:30:25 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c9df1eebbb91f41d617b3f2aa14bbacacea6756d
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Jan 16 12:30:25 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 23201c3d16c807a3ed4ebc03633c672f4a73dff8
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 14 12:30:35 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 00832d2f6cdd706fd8e75810f8ca7e5901b1e1b0
+Author: Cristian Marchi <cri.penta@gmail.com>
+Date:   Sat Dec 24 18:30:20 2016 +0100
+
+    I18n: Update translation it (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 26c621902230725ff71259d148c15d8ce182af97
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Dec 9 06:30:20 2016 +0100
+
+    I18n: Update translation da (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f2ec420ea41ec654d4aaff3982e9fe0c133002a6
+Author: Igor <f2404@yandex.ru>
+Date:   Wed Nov 30 00:30:14 2016 +0100
+
+    I18n: Update translation ru (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f1eb919a42201e3d1c1c52732497826e11c12d12
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Nov 26 10:43:37 2016 +0100
+
+    Bump the default dialog width to 500px
+
+commit 43eb0adda91b3d2142cdd6b9f93a4c4637a781a8
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sat Nov 26 10:42:33 2016 +0100
+
+    Improve vertical alignment of primary and secondary label
+
+commit ad31b9da01482e05af50c1e909c1304b3a64a316
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Nov 25 22:55:55 2016 +0100
+
+    Set a reasonable default window width to make sure labels wrap
+    
+    Otherwise secondary text makes the dialogs incredibly wide, as could
+    be seen in the test dialog for the xfce_dialog_confirm.
+
+commit 374e0cbdf394024cf896e489a9be261315dbff37
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Fri Nov 25 22:52:15 2016 +0100
+
+    Improve layout of labels in xfce dialogs
+    
+    Now text is left-aligned again in the labels (as was the case in Gtk2)
+    and the vertical alignment of the labels is centered against the icon
+    as well as the whole dialog.
+
+commit 458b44680daeb272aa956834f62d7307ba2e171b
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:   Mon Nov 7 12:30:20 2016 +0100
+
+    I18n: Update translation oc (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 28daa63b18a3cd5d01c6893a14c7cc4e1965e823
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:   Thu Oct 20 00:30:13 2016 +0200
+
+    I18n: Update translation oc (99%).
+    
+    173 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e04a122fac4a54949c38d6327f9b1afe381c771b
+Author: Nuno Miguel <nunomgue@gmail.com>
+Date:   Thu Oct 13 18:30:27 2016 +0200
+
+    I18n: Update translation pt (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit da373110daf72470d736a0c25483be77c0cff0de
+Author: Piarres Beobide <pi@beobide.net>
+Date:   Thu Oct 13 12:30:14 2016 +0200
+
+    I18n: Update translation eu (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 09e2151556e6ee06175e31305af38deae6dc5bd2
+Author: abuyop <abuyop@gmail.com>
+Date:   Sat Sep 24 18:30:27 2016 +0200
+
+    I18n: Update translation ms (100%).
+    
+    174 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5fc8bc7cf6f43e3a6db6c13649de13e990ceced9
+Author: enolp <enolp@softastur.org>
+Date:   Wed Sep 21 00:30:13 2016 +0200
+
+    I18n: Update translation ast (97%).
+    
+    170 translated messages, 4 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit bd55a3cee960255aa59a331ee2998c01fdfff8eb
+Author: Flo <flo.xfce@gmx-topmail.de>
+Date:   Thu Sep 15 10:06:18 2016 +0200
+
+    Fix build error with --disable-gtk3 (Bug #12648)
+
+commit 5f115a453bf3f4b76a1710cea5df03f2c1c0ca27
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Thu Sep 15 09:59:38 2016 +0200
+
+    Back to development
+
+commit 427ba514e521122579d22dc2f5e2f797d07b55d1
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Thu Sep 15 09:56:26 2016 +0200
+
+    Updates for release
+
 commit 935a1c755c89afeaa2764a7e5719130f7b31507c
 Author: Baurzhan Muftakhidinov <baurthefirst@gmail.com>
 Date:   Sun Sep 4 18:30:31 2016 +0200
@@ -363,9 +1143,9 @@ Date:   Tue Jun 7 10:54:37 2016 +0300
     New function: xfce_titled_dialog_new_with_mixed_buttons
     
     Using xfce_titled_dialog_new_with_buttons in Gtk3 results in
-    buttons	that cannot have icons except for STOCK	icons. This
+    buttons that cannot have icons except for STOCK icons. This
     is because it just calls gtk_dialog_add_button to create
-    and add	the buttons. With this new function, you specify
+    and add the buttons. With this new function, you specify
     an icon name, STOCK icon, or simply "" for no icon on the
     button followed by the button text and response id for each
     button.
@@ -2100,7 +2880,7 @@ Date:   Sun Sep 21 22:20:35 2014 +0200
     Merge branch 'master' of git://git.xfce.org/xfce/libxfce4ui
     
     Conflicts:
-    	libxfce4ui/abicheck.sh
+            libxfce4ui/abicheck.sh
 
 commit c5db61c6ceb7d0a28d7b9232bc8774cec0eed4f3
 Author: Yannick Le Guen <leguen.yannick@gmail.com>
@@ -8827,7 +9607,7 @@ commit 880dd239b408cbfcd7b265cd27107b3edf0c9e43
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Thu Jul 30 14:25:49 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 30421)
 
@@ -8852,9 +9632,9 @@ commit 4c677aa4f2b2a9a761201cbede91bc062e1a1498
 Author: Xu Hunt <mhuntxu@gmail.com>
 Date:   Thu Jul 23 23:54:34 2009 +0000
 
-    	* zh_CN.po: Simplified Chinese translation update
-    	* zh_CN.po: Simplified Chinese translation update
-    	* zh_CN.po: Simplified Chinese translation update
+            * zh_CN.po: Simplified Chinese translation update
+            * zh_CN.po: Simplified Chinese translation update
+            * zh_CN.po: Simplified Chinese translation update
     
     (Old svn revision: 30380)
 
@@ -8881,7 +9661,7 @@ Date:   Fri Jul 17 13:04:41 2009 +0000
 
     2009-07-17  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation reworked.
+            * hu.po: Translation reworked.
     
     (Old svn revision: 30337)
 
@@ -9142,22 +9922,22 @@ commit 48af9055bb6a7dd34873f1c4c02be6ac8677782f
 Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Thu Mar 19 15:02:17 2009 +0000
 
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
     
     (Old svn revision: 29675)
 
@@ -9224,17 +10004,17 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Mon Feb 9 00:43:54 2009 +0000
 
     xfprint/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-settings/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-mixer/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     squeeze/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfce4util/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     libxfce4ui/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     (Old svn revision: 29473)
 
@@ -9317,30 +10097,27 @@ commit 5ac2cb583e839d514735310831707c6b86704eb0
 Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Tue Dec 9 23:22:24 2008 +0000
 
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     
     
     
     
     
-     	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     
-     	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
-    
-    
-    
-     	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     
     
     
-     	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
-    
-     	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     
     
     
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+    
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     
     
     
@@ -9350,13 +10127,16 @@ Date:   Tue Dec 9 23:22:24 2008 +0000
     
     
     
-     	* sv.po: Swedish translation update (Daniel Nylander)
-    
-     	* sv.po: Swedish translation update (Daniel Nylander)
     
     
     
-     	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
+    
+            * sv.po: Swedish translation update (Daniel Nylander)
+    
+    
+    
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     
     (Old svn revision: 29000)
