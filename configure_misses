@@ -1,0 +1,4 @@
+Configure miss: vapigen
+Configure miss: optional package gladeui-1.0 >= 3.5.0
+Configure miss: optional package gladeui-2.0 >= 3.5.0
+Configure miss: whether to build the validation test framework
