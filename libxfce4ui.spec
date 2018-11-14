@@ -4,17 +4,17 @@
 #
 Name     : libxfce4ui
 Version  : 4.13.4
-Release  : 22
+Release  : 23
 URL      : http://archive.xfce.org/src/xfce/libxfce4ui/4.13/libxfce4ui-4.13.4.tar.bz2
 Source0  : http://archive.xfce.org/src/xfce/libxfce4ui/4.13/libxfce4ui-4.13.4.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
 Group    : Development/Tools
 License  : LGPL-2.0
-Requires: libxfce4ui-bin
-Requires: libxfce4ui-lib
-Requires: libxfce4ui-data
-Requires: libxfce4ui-doc
-Requires: libxfce4ui-locales
+Requires: libxfce4ui-bin = %{version}-%{release}
+Requires: libxfce4ui-data = %{version}-%{release}
+Requires: libxfce4ui-lib = %{version}-%{release}
+Requires: libxfce4ui-license = %{version}-%{release}
+Requires: libxfce4ui-locales = %{version}-%{release}
 BuildRequires : docbook-xml
 BuildRequires : gobject-introspection-dev
 BuildRequires : gtk-doc
@@ -22,6 +22,7 @@ BuildRequires : gtk-doc-dev
 BuildRequires : gtk3-dev
 BuildRequires : intltool
 BuildRequires : libxslt-bin
+BuildRequires : perl
 BuildRequires : pkgconfig(egl)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gtk+-2.0)
@@ -31,6 +32,7 @@ BuildRequires : pkgconfig(libxfce4util-1.0)
 BuildRequires : pkgconfig(libxfconf-0)
 BuildRequires : pkgconfig(sm)
 BuildRequires : startup-notification-dev
+BuildRequires : vala
 Patch1: 0001-Set-default-keyboard-shortcuts-for-use-within-Clear-.patch
 
 %description
@@ -42,7 +44,8 @@ to share commonly used Xfce widgets among the Xfce applications.
 %package bin
 Summary: bin components for the libxfce4ui package.
 Group: Binaries
-Requires: libxfce4ui-data
+Requires: libxfce4ui-data = %{version}-%{release}
+Requires: libxfce4ui-license = %{version}-%{release}
 
 %description bin
 bin components for the libxfce4ui package.
@@ -59,10 +62,10 @@ data components for the libxfce4ui package.
 %package dev
 Summary: dev components for the libxfce4ui package.
 Group: Development
-Requires: libxfce4ui-lib
-Requires: libxfce4ui-bin
-Requires: libxfce4ui-data
-Provides: libxfce4ui-devel
+Requires: libxfce4ui-lib = %{version}-%{release}
+Requires: libxfce4ui-bin = %{version}-%{release}
+Requires: libxfce4ui-data = %{version}-%{release}
+Provides: libxfce4ui-devel = %{version}-%{release}
 
 %description dev
 dev components for the libxfce4ui package.
@@ -79,10 +82,19 @@ doc components for the libxfce4ui package.
 %package lib
 Summary: lib components for the libxfce4ui package.
 Group: Libraries
-Requires: libxfce4ui-data
+Requires: libxfce4ui-data = %{version}-%{release}
+Requires: libxfce4ui-license = %{version}-%{release}
 
 %description lib
 lib components for the libxfce4ui package.
+
+
+%package license
+Summary: license components for the libxfce4ui package.
+Group: Default
+
+%description license
+license components for the libxfce4ui package.
 
 
 %package locales
@@ -102,12 +114,13 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1514495838
+export SOURCE_DATE_EPOCH=1542221484
 export CFLAGS="$CFLAGS -Os -fdata-sections -ffunction-sections -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -Os -fdata-sections -ffunction-sections -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -Os -fdata-sections -ffunction-sections -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -Os -fdata-sections -ffunction-sections -fno-semantic-interposition "
-%configure --disable-static --with-vendor-info="Clear Linux Project for Intel Architecture"
+%configure --disable-static --with-vendor-info="Clear Linux Project for Intel Architecture" \
+--disable-introspection
 make  %{?_smp_mflags}
 
 %check
@@ -118,13 +131,15 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1514495838
+export SOURCE_DATE_EPOCH=1542221484
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/libxfce4ui
+cp COPYING %{buildroot}/usr/share/package-licenses/libxfce4ui/COPYING
 %make_install
 %find_lang libxfce4ui
-## make_install_append content
+## install_append content
 mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir} && install -d -D -m 00755 %{buildroot}%{_datadir}/xfce4 && echo "Clear Linux Project for Intel Architecture" > %{buildroot}%{_datadir}/xfce4/vendorinfo
-## make_install_append end
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -135,9 +150,7 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 
 %files data
 %defattr(-,root,root,-)
-/usr/lib64/girepository-1.0/libxfce4ui-2.0.typelib
 /usr/share/applications/xfce4-about.desktop
-/usr/share/gir-1.0/*.gir
 /usr/share/icons/hicolor/48x48/apps/xfce4-logo.png
 /usr/share/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml
 /usr/share/xfce4/vendorinfo
@@ -182,7 +195,7 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 /usr/lib64/pkgconfig/libxfce4ui-2.pc
 
 %files doc
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/gtk-doc/html/libxfce4ui/XfceSMClient.html
 /usr/share/gtk-doc/html/libxfce4ui/XfceTitledDialog.html
 /usr/share/gtk-doc/html/libxfce4ui/annotation-glossary.html
@@ -221,6 +234,10 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 /usr/lib64/libxfce4ui-1.so.0.0.0
 /usr/lib64/libxfce4ui-2.so.0
 /usr/lib64/libxfce4ui-2.so.0.0.0
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/libxfce4ui/COPYING
 
 %files locales -f libxfce4ui.lang
 %defattr(-,root,root,-)

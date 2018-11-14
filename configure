@@ -1,1 +1,2 @@
 --with-vendor-info="Clear Linux Project for Intel Architecture"
+--disable-introspection
