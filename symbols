@@ -62,6 +62,7 @@ libxfce4ui-1.so.0:xfce_dialog_show_help_with_version
 libxfce4ui-1.so.0:xfce_dialog_show_info
 libxfce4ui-1.so.0:xfce_dialog_show_warning
 libxfce4ui-1.so.0:xfce_gdk_screen_get_active
+libxfce4ui-1.so.0:xfce_gdk_screen_get_geometry
 libxfce4ui-1.so.0:xfce_gtk_button_new_mixed
 libxfce4ui-1.so.0:xfce_gtk_frame_box_new
 libxfce4ui-1.so.0:xfce_gtk_frame_box_new_with_content
@@ -113,6 +114,7 @@ libxfce4ui-2.so.0:xfce_dialog_show_help_with_version
 libxfce4ui-2.so.0:xfce_dialog_show_info
 libxfce4ui-2.so.0:xfce_dialog_show_warning
 libxfce4ui-2.so.0:xfce_gdk_screen_get_active
+libxfce4ui-2.so.0:xfce_gdk_screen_get_geometry
 libxfce4ui-2.so.0:xfce_gtk_button_new_mixed
 libxfce4ui-2.so.0:xfce_gtk_frame_box_new
 libxfce4ui-2.so.0:xfce_gtk_frame_box_new_with_content
