@@ -1,3 +1,51 @@
+commit 989e976a612e63b78436c691adccdfe4389577f4
+Author: Romain Bouvier <skunnyk@alteroot.org>
+Date:   Sun Aug 11 22:26:03 2019 +0200
+
+    Back to development
+
+commit 8806d1620fe8d0c4c66531db189861a71efdb60d
+Author: Romain Bouvier <skunnyk@alteroot.org>
+Date:   Sun Aug 11 22:14:35 2019 +0200
+
+    Update for release
+
+commit 96ddca5dafb9ac336a76bedb1403d97840900872
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Aug 4 13:32:22 2019 -0300
+
+    Include string.h
+
+commit cb67f48cd2868109e67936a77aa386df6d462a6a
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Thu Aug 1 22:51:18 2019 -0300
+
+    Do not try to a set button' image if an empty string was used
+    
+    Otherwise labels will shift to the right
+
+commit 50eb083f4477ea7e1d5e0cbde02cc6438f1086da
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Tue Jul 30 12:30:21 2019 +0200
+
+    I18n: Update translation gl (100%).
+    
+    179 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit c8c06682ab11d7aee5490f7a1c71de28188b3dc9
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Jul 28 16:57:45 2019 +0200
+
+    Back to development
+
+commit 378a05c7b7d85d9e5c2e188e15759f09e60047b7
+Author: Simon Steinbeiss <simon.steinbeiss@elfenbeinturm.at>
+Date:   Sun Jul 28 16:55:40 2019 +0200
+
+    Updates for release
+
 commit 71843623588969b303026c2e6ee1bb1d9e3e4d59
 Author: Kjell Cato Heskjestad <cato@heskjestad.xyz>
 Date:   Wed Jul 24 12:30:30 2019 +0200
