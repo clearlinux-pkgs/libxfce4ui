@@ -1,4 +1,4 @@
-From 24c2cca508b5f6bba547cb5fd23bf02f6b904b54 Mon Sep 17 00:00:00 2001
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
 From: Ikey Doherty <michael.i.doherty@intel.com>
 Date: Tue, 15 Mar 2016 16:46:42 +0000
 Subject: [PATCH] Set default keyboard shortcuts for use within Clear Linux
@@ -16,17 +16,14 @@ Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml b/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
-index 2eeba75..91706c3 100644
+index c22428e..c550443 100644
 --- a/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
 +++ b/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
-@@ -19,6 +19,7 @@
-       <property name="XF86WWW" type="string" value="exo-open --launch WebBrowser"/>
-       <property name="XF86Mail" type="string" value="exo-open --launch MailReader"/>
-       <property name="Print" type="string" value="xfce4-screenshooter"/>
+@@ -29,6 +29,7 @@
+       <property name="&lt;Super&gt;r" type="string" value="xfce4-appfinder -c">
+         <property name="startup-notify" type="bool" value="true"/>
+       </property>
 +      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
      </property>
    </property>
    <property name="xfwm4" type="empty">
--- 
-2.21.0
-
