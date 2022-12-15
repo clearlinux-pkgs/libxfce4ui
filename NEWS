@@ -1,16 +1,167 @@
-4.16.1
+4.18.0 (2022-12-15)
 ======
+- Update About credits
+- build: Bump requirements for Xfce 4.18
+- Translation Updates:
+  Chinese (China), Czech, German, Hungarian, Lithuanian, Norwegian
+  Bokmål, Occitan (post 1500), Portuguese (Brazil), Serbian, Turkish
+
+4.17.9 (2022-11-30)
+======
+- Added move-window-to-monitor shortcut options (!80)
+- Translation Updates:
+  Albanian, Bulgarian, Chinese (Taiwan), Dutch, Estonian, French,
+  Italian, Japanese, Kazakh, Lithuanian, Polish, Portuguese, Spanish
+
+4.17.8 (2022-10-31)
+======
+- Bump GObject Introspection minim version to 1.66 (xfconf#8, !79)
+- Translation Updates:
+  Basque, Kazakh, Occitan (post 1500), Slovenian
+
+4.17.7 (2022-09-05)
+======
+- Update copyright year
+- docs: Add missing index of deprecated symbols
+- libxfce4kbd-private: Reset shortcut recursively (#53)
+- tests: Fix deprecation warning
+- docs: Fix some broken links
+- docs: Fix "unused declarations" warning
+- docs: Add missing documentation
+- docs: Add missing deprecation guards
+- docs: Update `.gitignore`
+- Fix titled dialog subtitle when headerbar is not used (!78)
+- xfce-about: Add kernel and gtk version to system tab (!76)
+- titled-dialog: Exclude normal windows from CSD adjustments (!72)
+- xfce-about: Slightly tweak padding (!75)
+- xfce4-about: Add support for 3A5000/loongarch64 (!74)
+- titled-dialog: CSD XfceTitledDialog improvements (#26, !71)
+- Shortcuts Editor: Tooltip improvement (!70)
+- Fix intltool lock file problem during make distcheck (!69)
+- xfce-spawn: Do not change DISPLAY on non-X11 displays (#13, !68)
+- xfce-dialogs: Fix a memory leak
+- Bump minimal required libxfce4util to 4.17.2
+- Translation Updates:
+  Albanian, Arabic, Azerbaijani, Basque, Bulgarian, Chinese (China),
+  Chinese (Taiwan), Croatian, Czech, Danish, Dutch, Estonian, French,
+  Georgian, German, Greek, Hebrew, Hungarian, Indonesian, Italian,
+  Japanese, Korean, Lithuanian, Norwegian Bokmål, Occitan (post 1500),
+  Polish, Portuguese, Portuguese (Brazil), Romanian, Russian, Serbian,
+  Slovenian, Spanish, Swedish, Turkish, Ukrainian, Welsh
+
+4.17.6
+======
+- XfceShortcutsEditor: Do not update editor if shortcut change failed
+- XfceShortcutsEditor: Allow to choose "Space" or "Enter" as shortcut
+- XfceShortcutDialog: Do not propagate key events
+- Function description spelling and format.
+- Add new function xfce_gtk_toggle_tool_button_new_from_action_entry
+- XfceShortcutsGrabber: Fix `-Wanalyzer-null-dereference` warning
+- Secure memory allocations
+- Update COPYING
+- XfceShortcutsGrabber: Detect auto-repeat key press
+- XfceShortcutDialog: Fix a memory leak
+- Translation Updates:
+  Azerbaijani
+
+4.17.5
+======
+- XfceShortcutsEditor: Allow NULL for section name and document it
+- XfceShortcutsEditor: Add new vectorized constructor
+- i18n: Do not use textdomain() in libs
+- XfceShortcutsEditor: Remove label formatting if necessary
+- Simplify startup notification timeout
+- XfceShortcutsDialog: center the dialog on the parent window
+- Translation Updates:
+  Danish, Russian
+
+4.17.4 (2022-02-21)
+======
+- Replace duplicate logic with xfce_str_replace
+- Use headerbars for dialogs if Gtk/DialogsUseHeader is enabled (#14)
+- Add new method "xfce_gtk_menu_append_separator" (Issue #49)
+- xfce4-about - improve /etc/os-release value unquoting (Issue #47)
+- Add comment to return gboolean in XfceGtkActionEntry
+- Translation Updates:
+  Czech, Hebrew, Occitan (post 1500), Romanian, Ukrainian
+
+4.17.3
+======
+- Add functions for handling accelerators that use the Tab key
+- Check time.h and sys/time.h for libgtop
+- `g_once_init_enter()` parameter shouldn't be volatile anymore.
+- Translation Updates: Croatian
+
+4.17.2
+======
+- xfce-about: Fix potential NULL pointer access
+- Introduce a shortcuts editor widget
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Basque,
+  Belarusian, Bengali, Bulgarian, Catalan, Chinese (China), Chinese
+  (Hong Kong), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  Eastern Armenian, English (Australia), English (United Kingdom),
+  Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Telugu, Thai, Turkish, Ukrainian, Uyghur, Welsh
+
+4.17.1
+======
+- Add xfce_gdk_device_grab
+- Fix xfce_gdk_screen_get_active to return correct monitor number
+- Switch keyboard shortcut 'tile-up' with 'tile-down' (were mixed up)
+- Usage of '&lt;' and '&gt;' instead of '<' and '>' in XML (Issue #44)
+- Change "Setting System" to "Settings Manager"
+- Add 4.18 section to docs
 - Add 4.16 section to docs
+- Translation Updates:
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Basque,
+  Belarusian, Bengali, Bulgarian, Catalan, Chinese (China), Chinese
+  (Hong Kong), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  Eastern Armenian, English (Australia), English (United Kingdom),
+  Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Telugu, Thai, Turkish, Ukrainian, Uyghur, Welsh
+
+4.17.0
+======
+- added xfce_gtk_label_set_a11y_relation to be used by various components
+- initialize base_property prior xfce_shortcuts_provider_register
 - about: Replace stock with regular button
-- about: Make Close button translatable (Fixes #41)
+- about: Make Close button translateable (Fixes #41)
+- Check if pixbuf is valid before unref
+- shortcuts: Add Alt+Super+s for orca (Fixes #39)
+- shortcuts-grabber: Filter grabbing by key group
+- shortcuts-grabber: Redesign shortcut regrabbing (Bug #33)
+- shortcuts-grabber: Stop search when the first match is found
+- shortcuts: Fix a memory leak
+- shortcuts-grabber: Record xkb state group (Bug #33)
+- about: Fix invalid length and Zink renderer string
+- Don't leak pixbuf
+- XfceTitledDialog: Add pixbuf support as fallback
+- Revamp the documentation to uniformize accross components
+- Prevent resizing on message display with XfceFilenameInput
+- Delay whitespace warning in XfceFilenameInput
 - Fix cast alignment warning
 - Remove Gtk2 leftovers
 - Don't reserve vertical space for subtitles in headerbars
 - Translation Updates:
-  Basque, Belarusian, Bulgarian, Czech, Danish, Estonian, Finnish,
-  French, Hebrew, Indonesian, Interlingue, Japanese, Lithuanian,
-  Norwegian Bokmål, Polish, Portuguese, Portuguese (Brazil), Russian,
-  Serbian, Slovenian, Spanish, Swedish, Turkish
+  Albanian, Amharic, Arabic, Armenian, Armenian (Armenia), Basque,
+  Belarusian, Bengali, Bulgarian, Catalan, Chinese (China), Chinese
+  (Hong Kong), Chinese (Taiwan), Croatian, Czech, Danish, Dutch,
+  Eastern Armenian, English (Australia), English (United Kingdom),
+  Estonian, Finnish, French, Galician, German, Greek, Hebrew,
+  Hungarian, Icelandic, Indonesian, Interlingue, Italian, Japanese,
+  Kazakh, Korean, Latvian, Lithuanian, Malay, Norwegian Bokmål,
+  Norwegian Nynorsk, Occitan (post 1500), Polish, Portuguese,
+  Portuguese (Brazil), Romanian, Russian, Serbian, Slovak, Slovenian,
+  Spanish, Swedish, Telugu, Thai, Turkish, Ukrainian, Uyghur, Welsh
 
 4.16.0
 ======

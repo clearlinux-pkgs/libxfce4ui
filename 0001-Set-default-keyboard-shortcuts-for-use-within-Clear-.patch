@@ -16,13 +16,13 @@ Signed-off-by: Patrick McCarty <patrick.mccarty@intel.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml b/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
-index c22428e..c550443 100644
+index 32901e3..dbf3c32 100644
 --- a/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
 +++ b/libxfce4kbd-private/xfce4-keyboard-shortcuts.xml
-@@ -29,6 +29,7 @@
-       <property name="&lt;Super&gt;r" type="string" value="xfce4-appfinder -c">
+@@ -30,6 +30,7 @@
          <property name="startup-notify" type="bool" value="true"/>
        </property>
+       <property name="&lt;Alt&gt;&lt;Super&gt;s" type="string" value="orca"/>
 +      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
      </property>
    </property>

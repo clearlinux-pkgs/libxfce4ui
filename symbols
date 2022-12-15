@@ -6,6 +6,13 @@ libxfce4kbd-private-3.so.0:xfce_shortcut_dialog_get_type
 libxfce4kbd-private-3.so.0:xfce_shortcut_dialog_new
 libxfce4kbd-private-3.so.0:xfce_shortcut_dialog_run
 libxfce4kbd-private-3.so.0:xfce_shortcut_free
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_dialog_get_type
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_dialog_new
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_dialog_new_with_parent
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_get_type
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_new
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_new_array
+libxfce4kbd-private-3.so.0:xfce_shortcuts_editor_new_variadic
 libxfce4kbd-private-3.so.0:xfce_shortcuts_free
 libxfce4kbd-private-3.so.0:xfce_shortcuts_grabber_add
 libxfce4kbd-private-3.so.0:xfce_shortcuts_grabber_get_type
@@ -40,6 +47,7 @@ libxfce4ui-2.so.0:xfce_filename_input_get_entry
 libxfce4ui-2.so.0:xfce_filename_input_get_text
 libxfce4ui-2.so.0:xfce_filename_input_get_type
 libxfce4ui-2.so.0:xfce_filename_input_sensitise_widget
+libxfce4ui-2.so.0:xfce_gdk_device_grab
 libxfce4ui-2.so.0:xfce_gdk_screen_get_active
 libxfce4ui-2.so.0:xfce_gdk_screen_get_geometry
 libxfce4ui-2.so.0:xfce_gicon_from_name
@@ -48,11 +56,15 @@ libxfce4ui-2.so.0:xfce_gtk_accel_group_disconnect_action_entries
 libxfce4ui-2.so.0:xfce_gtk_accel_map_add_entries
 libxfce4ui-2.so.0:xfce_gtk_button_new_mixed
 libxfce4ui-2.so.0:xfce_gtk_check_menu_item_new
+libxfce4ui-2.so.0:xfce_gtk_execute_tab_accel
 libxfce4ui-2.so.0:xfce_gtk_frame_box_new
 libxfce4ui-2.so.0:xfce_gtk_frame_box_new_with_content
 libxfce4ui-2.so.0:xfce_gtk_get_action_entry_by_id
+libxfce4ui-2.so.0:xfce_gtk_handle_tab_accels
 libxfce4ui-2.so.0:xfce_gtk_image_menu_item_new
 libxfce4ui-2.so.0:xfce_gtk_image_menu_item_new_from_icon_name
+libxfce4ui-2.so.0:xfce_gtk_label_set_a11y_relation
+libxfce4ui-2.so.0:xfce_gtk_menu_append_separator
 libxfce4ui-2.so.0:xfce_gtk_menu_append_seperator
 libxfce4ui-2.so.0:xfce_gtk_menu_item_new
 libxfce4ui-2.so.0:xfce_gtk_menu_item_new_from_action_entry
@@ -60,6 +72,7 @@ libxfce4ui-2.so.0:xfce_gtk_menu_item_set_accel_label
 libxfce4ui-2.so.0:xfce_gtk_menu_popup_until_mapped
 libxfce4ui-2.so.0:xfce_gtk_radio_menu_item_new
 libxfce4ui-2.so.0:xfce_gtk_toggle_menu_item_new_from_action_entry
+libxfce4ui-2.so.0:xfce_gtk_toggle_tool_button_new_from_action_entry
 libxfce4ui-2.so.0:xfce_gtk_tool_button_new_from_action_entry
 libxfce4ui-2.so.0:xfce_gtk_translate_action_entries
 libxfce4ui-2.so.0:xfce_gtk_window_center_on_active_screen
