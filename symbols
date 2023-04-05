@@ -81,6 +81,10 @@ libxfce4ui-2.so.0:xfce_icon_name_from_desktop_id
 libxfce4ui-2.so.0:xfce_message_dialog
 libxfce4ui-2.so.0:xfce_message_dialog_new
 libxfce4ui-2.so.0:xfce_message_dialog_new_valist
+libxfce4ui-2.so.0:xfce_screensaver_get_type
+libxfce4ui-2.so.0:xfce_screensaver_inhibit
+libxfce4ui-2.so.0:xfce_screensaver_lock
+libxfce4ui-2.so.0:xfce_screensaver_new
 libxfce4ui-2.so.0:xfce_sm_client_connect
 libxfce4ui-2.so.0:xfce_sm_client_disconnect
 libxfce4ui-2.so.0:xfce_sm_client_error_enum_get_type
