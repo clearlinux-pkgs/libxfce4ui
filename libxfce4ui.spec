@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : libxfce4ui
-Version  : 4.18.3
-Release  : 34
-URL      : https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.3.tar.bz2
-Source0  : https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.3.tar.bz2
+Version  : 4.18.4
+Release  : 35
+URL      : https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.4.tar.bz2
+Source0  : https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.4.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
 Group    : Development/Tools
 License  : LGPL-2.0
@@ -109,48 +109,69 @@ locales components for the libxfce4ui package.
 
 
 %prep
-%setup -q -n libxfce4ui-4.18.3
-cd %{_builddir}/libxfce4ui-4.18.3
+%setup -q -n libxfce4ui-4.18.4
+cd %{_builddir}/libxfce4ui-4.18.4
 %patch1 -p1
+pushd ..
+cp -a libxfce4ui-4.18.4 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680725986
+export SOURCE_DATE_EPOCH=1684863499
 export GCC_IGNORE_WERROR=1
-export CFLAGS="$CFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 %configure --disable-static --with-vendor-info="Clear Linux Project for Intel Architecture" \
 --disable-introspection
 make  %{?_smp_mflags}
 
+unset PKG_CONFIG_PATH
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
+%configure --disable-static --with-vendor-info="Clear Linux Project for Intel Architecture" \
+--disable-introspection
+make  %{?_smp_mflags}
+popd
 %check
 export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
+cd ../buildavx2;
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1680725986
+export SOURCE_DATE_EPOCH=1684863499
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libxfce4ui
 cp %{_builddir}/libxfce4ui-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libxfce4ui/3cc956929ff9e4c1c89a2c826cdc7fec5e0b21ab || :
+pushd ../buildavx2/
+%make_install_v3
+popd
 %make_install
 %find_lang libxfce4ui
 ## install_append content
 mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir} && install -d -D -m 00755 %{buildroot}%{_datadir}/xfce4 && echo "Clear Linux Project for Intel Architecture" > %{buildroot}%{_datadir}/xfce4/vendorinfo
 ## install_append end
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
 
 %files bin
 %defattr(-,root,root,-)
+/V3/usr/bin/xfce4-about
 /usr/bin/xfce4-about
 
 %files data
@@ -169,6 +190,8 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 
 %files dev
 %defattr(-,root,root,-)
+/V3/usr/lib64/libxfce4kbd-private-3.so
+/V3/usr/lib64/libxfce4ui-2.so
 /usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcut-dialog.h
 /usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-editor-dialog.h
 /usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-editor.h
@@ -229,6 +252,10 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/libxfce4kbd-private-3.so.0
+/V3/usr/lib64/libxfce4kbd-private-3.so.0.0.0
+/V3/usr/lib64/libxfce4ui-2.so.0
+/V3/usr/lib64/libxfce4ui-2.so.0.0.0
 /usr/lib64/libxfce4kbd-private-3.so.0
 /usr/lib64/libxfce4kbd-private-3.so.0.0.0
 /usr/lib64/libxfce4ui-2.so.0
