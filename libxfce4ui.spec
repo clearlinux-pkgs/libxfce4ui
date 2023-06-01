@@ -5,7 +5,7 @@
 #
 Name     : libxfce4ui
 Version  : 4.18.4
-Release  : 35
+Release  : 36
 URL      : https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.4.tar.bz2
 Source0  : https://archive.xfce.org/src/xfce/libxfce4ui/4.18/libxfce4ui-4.18.4.tar.bz2
 Summary  : Private Xfce library for shared code between xfwm4 and xfce4-settings
@@ -121,7 +121,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684863499
+export SOURCE_DATE_EPOCH=1685632857
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export FCFLAGS="$FFLAGS -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffunction-sections -fno-lto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
@@ -152,7 +152,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1684863499
+export SOURCE_DATE_EPOCH=1685632857
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libxfce4ui
 cp %{_builddir}/libxfce4ui-%{version}/COPYING %{buildroot}/usr/share/package-licenses/libxfce4ui/3cc956929ff9e4c1c89a2c826cdc7fec5e0b21ab || :
@@ -190,8 +190,6 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libxfce4kbd-private-3.so
-/V3/usr/lib64/libxfce4ui-2.so
 /usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcut-dialog.h
 /usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-editor-dialog.h
 /usr/include/xfce4/libxfce4kbd-private-3/libxfce4kbd-private/xfce-shortcuts-editor.h
@@ -252,9 +250,7 @@ mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libxfce4kbd-private-3.so.0
 /V3/usr/lib64/libxfce4kbd-private-3.so.0.0.0
-/V3/usr/lib64/libxfce4ui-2.so.0
 /V3/usr/lib64/libxfce4ui-2.so.0.0.0
 /usr/lib64/libxfce4kbd-private-3.so.0
 /usr/lib64/libxfce4kbd-private-3.so.0.0.0
